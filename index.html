@@ -4,13 +4,21 @@
 	<title>Gerenciador de Tarefas</title>
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
-<body>
+<body id="batata">
 	<h1>Adicione suas Tarefas</h1>
 	<form>
-		<input type="color" name="cor" id="cores"><!--Lembrar de programar o aspecto de cores necessarias: Vermelho, verde rosa, azul, preto, branco e roxo-->
+		<div onclick="corpostit()" class="cor rosa" data-value="#f7f7f"></div>
+		<div onclick="corpostit()" class="cor vermelho" data-value="#ff0000"></div>
+		<div onclick="corpostit()" class="cor roxo" data-value="#7f00ff"></div>
+		<div onclick="corpostit()" class="cor verde" data-value="#00ff00"></div>
+		<div onclick="corpostit()" class="cor azul" data-value="#0000ff"></div>
+		<div onclick="corpostit()" class="cor branco" data-value="#fff"></div>
+		<div onclick="corpostit()" class="cor preto" data-value="#000"></div>
+		<input class="cor" type="color" name="cor"><br><!--Lembrar de programar o aspecto de cores necessarias: Vermelho, verde rosa, azul, preto, branco e roxo-->
 		<input type="text" id="tarefa">
-		<input type="submit" value="Salvar" id="botao">
+		<input type="submit" value="Salvar" id="btnSalvar">
 	</form>
+
 	<script type="text/javascript" src="javascript.js"></script>
 </body>
 </html>
