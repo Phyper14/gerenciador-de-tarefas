@@ -9,7 +9,7 @@ btnSalvar.addEventListener("click", function(event){
 	corpo.appendChild(postit);
 });
 function cortarefas(){
-	//var classe = document.getElementByClass("cor").className;
+	var classe = document.getElementByClass("cor").className;
 	console.log(classe);
 	/*if (class == rosa){
 		console.log("Rosa");
