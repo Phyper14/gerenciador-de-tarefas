@@ -6,6 +6,18 @@
 #cores{
 	border-radius: 30%;
 }
+p:nth-child(even){
+	transform: rotate(6deg);
+	position: relative;
+}
+p:nth-child(odd){
+	transform: rotate(-6deg);
+	position: relative;
+}
+p:nth-child(3n){
+	transform: rotate(0deg);
+	position: relative;
+}
 .cor{
 	width: 24px;
 	height: 24px;
@@ -14,6 +26,15 @@
 	margin: 0 0 0 0.2em;
 	cursor: pointer;
 	padding: 2px;
+}
+.caixa{
+	margin: 3.5%;
+	padding: 1em;
+	border-radius: 5px;
+	height: 200px;
+	width: 150px;
+	display: inline-block;
+	float: left;
 }
 .rosa{
 	background-color: #ff80c0;

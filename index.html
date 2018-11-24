@@ -4,7 +4,7 @@
 	<title>Gerenciador de Tarefas</title>
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
-<body id="batata">
+<body>
 	<h1>Adicione suas Tarefas</h1>
 	<form>
 		<div id="">
@@ -15,11 +15,13 @@
 			<div onclick="cortarefas()" class="cor azul" data-value="#0000ff"></div>
 			<div onclick="cortarefas()" class="cor branco" data-value="#fff"></div>
 			<div onclick="cortarefas()" class="cor preto" data-value="#000"></div>
-			<input class="cor" type="color">
+			<input id="cor" class="cor" type="color">
 		</div><br>
 		<input type="text" id="tarefa">
-		<input type="submit" value="Salvar" id="btnSalvar">
+		<input type="submit" value="Criar" id="btnSalvar">
 	</form>
+	<div id="lista_tarefas">
+	</div>
 
 	<script type="text/javascript" src="javascript.js"></script>
 </body>
