@@ -5,6 +5,8 @@ btnSalvar.addEventListener("click", function(event){
 	var tarefa = document.getElementById("tarefa").value;
 	var corpo = document.getElementById("lista_tarefas");
 	var postit = document.createElement("p");
+	var fonte = corpostit.replace("#", '');
+	var r = parseInt
 	postit.style.backgroundColor = corpostit;
 	console.log(corpostit);
 	postit.textContent = tarefa
