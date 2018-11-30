@@ -13,6 +13,9 @@ btnSalvar.addEventListener("click", function(event){
 	var g = parseInt(fonte.substring(2,4), 16);
 	var b = parseInt(fonte.substring(4,6), 16);
 	console.log(r, g, b)
+	if ((r+g+b)<432){
+		postit.style.color = "white";
+	}
 	nota.style.backgroundColor = corpostit;
 	console.log(corpostit);
 	postit.textContent = tarefa
@@ -22,7 +25,12 @@ btnSalvar.addEventListener("click", function(event){
 	postit.appendChild(btnEditar);
 	nota.appendChild(postit);
 	corpo.appendChild(nota);
+	indice = (localStorage.length) + 1
+	localStorage.setItem("tarefa_" + indice, tarefa);
 });
+for(var i=1; i<=(localStorage.length); i++ )
+	localStorage.getItem("tarefa_"+i), i;
+
 function criarbtn(cor, icone){
 	var i = document.createElement("i");
 	var btn = document.createElement("button");
