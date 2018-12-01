@@ -38,10 +38,16 @@
 	border: 1px solid rgba(32, 32, 32, 10%);
 }
 .btn-apagar{
-
+	background-color: red;
+	width: 25px;
+	height: 15px;
+	border-radius: 5px;
 }
 .btn-editar{
-
+	background-color: yellow;
+	width: 25px;
+	height: 15px;
+	border-radius: 5px;
 }
 .rosa{
 	background-color: #ff80c0;
@@ -65,3 +71,11 @@
 .preto{
 	background-color: #000;
 }
+
+.fade-out{
+	opacity: 0;
+	transition: 1s;
+}
+/**.invisivel{
+	display: none;
+}*/

@@ -2,8 +2,9 @@ var btnSalvar = document.querySelector("#btnSalvar");
 btnSalvar.addEventListener("click", function(event){
 	event.preventDefault();
 	var nota = document.createElement("div");
-	var btnApagar = criarbtn("cor-apagar", "btn-apagar");
-	var btnEditar = criarbtn("cor-editar","btn-editar");
+	var conteudo = document.createElement("div");
+	var btnApagar = criarbtn("btn-apagar", "icone-apagar");
+	var btnEditar = criarbtn("btn-editar", "icone-editar");
 	var corpostit = document.getElementById("cor").value;
 	var tarefa = document.getElementById("tarefa").value;
 	var corpo = document.getElementById("lista_tarefas");
@@ -21,15 +22,16 @@ btnSalvar.addEventListener("click", function(event){
 	postit.textContent = tarefa
 	nota.classList.add("caixa");
 	nota.classList.add("notas");
-	postit.appendChild(btnApagar);
-	postit.appendChild(btnEditar);
-	nota.appendChild(postit);
+	nota.appendChild(btnApagar);
+	nota.appendChild(btnEditar);
+	conteudo.appendChild(postit);
+	nota.appendChild(conteudo);
 	corpo.appendChild(nota);
 	indice = (localStorage.length) + 1
 	localStorage.setItem("tarefa_" + indice, tarefa);
+
+	btnApagar.addEventListener
 });
-for(var i=1; i<=(localStorage.length); i++ )
-	localStorage.getItem("tarefa_"+i), i;
 
 function criarbtn(cor, icone){
 	var i = document.createElement("i");
@@ -39,6 +41,39 @@ function criarbtn(cor, icone){
 	i.classList.add(icone);
 	return btn;
 }
+ 
+var btnApagar = document.querySelectorAll(".btn-apagar");
+btnApagar.forEach(function(botao){
+	botao.addEventListener("click", apagarTarefa())
+});
+
+var btnEditar = document.querySelectorAll(".btn-editar");
+btnEditar.forEach(function(botao){
+	botao.addEventListener("click", editarTarefa())
+});
+
+function editarTarefa(event){
+
+};
+
+function apagarTarefa(event){
+	nota.classList.add("fade-out");
+	var indice = nota.id;
+	var linha;
+	if(event.target.hasChildNodes()) {
+			linha = event.target.parentNode.parentNode;
+		} else {
+			linha = event.target.parentNode.parentNode.parentNode;
+		}
+		localStorage.removeItem("tarefa_" + indice);
+		
+		setTimeout(function(){
+			nota.remove();
+		}, 1000);
+};
+
+for(var i=1; i<=(localStorage.length); i++ )
+	localStorage.getItem("tarefa_"+i), i;
 /**function cortarefas(){
-	
+
 };*/
