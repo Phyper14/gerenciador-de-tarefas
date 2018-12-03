@@ -17,9 +17,11 @@ btnSalvar.addEventListener("click", function(event){
 	if ((r+g+b)<432){
 		postit.style.color = "white";
 	}
-	nota.style.backgroundColor = corpostit;
-	console.log(corpostit);
+	conteudo.classList.add("conteudo");
+	nota.classList.add("nota");
+	conteudo.style.backgroundColor = corpostit;
 	postit.textContent = tarefa
+	postit.style.padding = 5%
 	nota.classList.add("caixa");
 	nota.classList.add("notas");
 	nota.appendChild(btnApagar);
@@ -27,10 +29,20 @@ btnSalvar.addEventListener("click", function(event){
 	conteudo.appendChild(postit);
 	nota.appendChild(conteudo);
 	corpo.appendChild(nota);
+
 	indice = (localStorage.length) + 1
 	localStorage.setItem("tarefa_" + indice, tarefa);
+	
 
-	btnApagar.addEventListener
+	var botaoApagar = document.querySelectorAll(".btn-apagar");
+	botaoApagar.forEach(function(botao){
+	botao.addEventListener("click", apagarTarefa);
+	});
+
+	var botaoEditar = document.querySelectorAll(".btn-editar");
+	botaoEditar.forEach(function(botao){
+	botao.addEventListener("click", editarTarefa);
+	});
 });
 
 function criarbtn(cor, icone){
@@ -41,36 +53,27 @@ function criarbtn(cor, icone){
 	i.classList.add(icone);
 	return btn;
 }
- 
-var btnApagar = document.querySelectorAll(".btn-apagar");
-btnApagar.forEach(function(botao){
-	botao.addEventListener("click", apagarTarefa())
-});
-
-var btnEditar = document.querySelectorAll(".btn-editar");
-btnEditar.forEach(function(botao){
-	botao.addEventListener("click", editarTarefa())
-});
 
 function editarTarefa(event){
 
 };
 
 function apagarTarefa(event){
-	nota.classList.add("fade-out");
-	var indice = nota.id;
-	var linha;
+	var apagar;
 	if(event.target.hasChildNodes()) {
-			linha = event.target.parentNode.parentNode;
-		} else {
-			linha = event.target.parentNode.parentNode.parentNode;
-		}
-		localStorage.removeItem("tarefa_" + indice);
-		
-		setTimeout(function(){
-			nota.remove();
-		}, 1000);
-};
+		apagar = event.target.parentNode;
+		console.log("erro no if");
+	} else {
+		apagar = event.target.parentNode.parentNode;
+		console.log("erro no else");
+	}
+	apagar.classList.add("fade-out");
+	/*var indice = apagar.id;*/
+	localStorage.removeItem("tarefa_" + indice);
+	setTimeout(function(){
+		apagar.remove();
+	}, 250);
+}
 
 for(var i=1; i<=(localStorage.length); i++ )
 	localStorage.getItem("tarefa_"+i), i;

@@ -38,16 +38,18 @@
 	border: 1px solid rgba(32, 32, 32, 10%);
 }
 .btn-apagar{
-	background-color: red;
-	width: 25px;
-	height: 15px;
-	border-radius: 5px;
+	background-color: #9F9F9F;
+	width: 50%;
+	height: 10%;
+	border: 0;
+	margin: 0;
 }
 .btn-editar{
-	background-color: yellow;
-	width: 25px;
-	height: 15px;
-	border-radius: 5px;
+	background-color: #EFEFEF;
+	width: 50%;
+	height: 10%;
+	border: 0;
+	margin: 0;
 }
 .rosa{
 	background-color: #ff80c0;
@@ -75,6 +77,19 @@
 .fade-out{
 	opacity: 0;
 	transition: 1s;
+}
+.conteudo{
+	height: 90%;
+	width: 100%;
+	border-radius: 5px;
+}
+.nota{
+	margin: 5%;
+	background-color: white;
+	padding: 0;
+}
+p{
+	margin: 0;
 }
 /**.invisivel{
 	display: none;
